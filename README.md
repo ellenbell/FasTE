@@ -4,7 +4,7 @@ This repository is designed to be used as a quick use guide to two packages; the
 
 Dependencies
 
-[Extensive de novo TE Annotator](https://github.com/oushujun/EDTA)
-[DeepTE](https://github.com/LiLabAtVT/DeepTE)
-[RepeatMasker](https://www.repeatmasker.org) 
+[Extensive de novo TE Annotator](https://github.com/oushujun/EDTA)\n
+[DeepTE](https://github.com/LiLabAtVT/DeepTE) \n
+[RepeatMasker](https://www.repeatmasker.org) \n
 [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) 
