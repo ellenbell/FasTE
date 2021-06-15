@@ -100,7 +100,9 @@ bash
 awk '!/\*/' repeatmasker.out > noasterisk_repeatmasker.out
 ```
 When using *de novo* libraries RepeatMasker sometimes also adds a superfluous -int notation to the TE name which can interfere with downstream parsing, this can be removed with the following bash command. <br />
-
+```
+sed 's/-int//' noasterisk_repeatmasker.out > tidy_noasterisk_repeatmasker.out
+```
 ### Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
 ## Citations
