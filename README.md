@@ -77,10 +77,17 @@ sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up lib
 ## Part 2: Screening for TEs
 
 ### TE Screening with [RepeatMasker](https://www.repeatmasker.org)
+```
+[pathway to RepeatMasker]RepeatMasker [pathway to the FASTA genome/transcriptome to be screened] -pa 48 -s -a -lib [pathway to the final EDTA/DeepTE FASTA library] -dir .
+```
+-pa gives the number of processess to use in parallel <br />
+-s [s|q|qq] RepeatMasker is able to operate at different sensitivities/speeds with -q providing a quick, less sensitive screening and -s providing a slow and more sensivite screening <br />
+-a is an output option that shows alignments in a .align output file <br />
+
 
 ### RepeatMasker Output Clean-Up
 
 ### Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
-
+## Citations
 
