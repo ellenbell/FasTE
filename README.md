@@ -106,6 +106,10 @@ sed 's/-int//' noasterisk_repeatmasker.out > tidy_noasterisk_repeatmasker.out
 ```
 ### Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
+Cleaned RepeatMasker output files will need to be further parsed prior to any downstream analysis of TE content. We recommend the use of [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) which is an R based parse script which will; (i) remove repetetive elements not classed as TEs, (ii) merge closely positioned TE fragments of matching identity, (iii) remove duplicated isoforms (from transcriptomic data) and, (iv) remove fragments less then 80 base pairs long. It then outputs a .vcf file which can be input for downstream applications. 
+
+
+
 ## Citations
 Ou, S., Su, W., Liao, Y., Chougule, K., Agda, J. R.A., Hellinga, A. J., …Hufford, M. B. (2019). Benchmarking transposable element annotation methods for creation of a streamlined, comprehensive pipeline. Genome Biology, 20(1), 1–18. doi: 10.1186/s13059-019-1905-y. <br />
 
