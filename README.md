@@ -41,13 +41,15 @@ If this installation has been completed the following commands will apply <br />
 conda activate EDTA 
 perl [path to EDTA script]/EDTA.pl --genome [path to fasta file genome assembly] --species others --sensitive 1 --threads 42 
 exit
-```
- --genome [file] path to genome FASTA file <br />
- --species [rice|Maize|others] in this instance we were working on a teleost fish species so used "others" <br />
- --sensitive [0|1] Use RepeatModeler to identify remaining TEs (1) or not (0, default), we ran it with RepeatModeler <br />
- --threads Number of threads to run this script (default 4), we ran it with 42 <br />
- Other options are available, see https://github.com/oushujun/EDTA <br />
- 
+
+ --genome [file]                  Path to genome FASTA file 
+ --species [rice|Maize|others]    In this instance we were working on a teleost fish species so used "others" 
+ --sensitive [0|1]                Use RepeatModeler to identify remaining TEs (1) or not (0, default), we ran it with RepeatModeler 
+ --threads                        Number of threads to run this script (default 4), we ran it with 42 
+
+Other options are available, see https://github.com/oushujun/EDTA 
+ ```
+
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
 On this system with this genome EDTA ran in c.60 hours. <br />
  
@@ -56,13 +58,15 @@ On this system with this genome EDTA ran in c.60 hours. <br />
 conda activate py36
 python [path to DeepTE]DeepTE.py -d [path to working directory] -o [path to output directory] -i [path to EDTA library FASTA] -sp M -m M
 exit
+
+-d               Pathway to a working directory where intermediate files for each step are stored
+-o               Pathway to an output directory where output files are stored
+-i               Input sequences that are unknown TE or DNA sequences, in this case your EDTA made TE library
+-sp [P|M|F|O]    P: Plants, M: Metazoans, F: Fungi and O: Others. This was a teleost fish species so M
+-m [P|M|F|P|U]   This argument directly downloads the desired model directory if -m_dir is used users will need to download the model directory themselves
+
+Other settings are available, see https://github.com/LiLabAtVT/DeepTE
 ```
--d pathway to a working directory where intermediate files for each step are stored <br />
--o pathway to an output directory where output files are stored <br />
--i Input sequences that are unknown TE or DNA sequences, in this case your EDTA made TE library <br />
--sp [P|M|F|O], P: Plants, M: Metazoans, F: Fungi and O: Others. This was a teleost fish species so M <br />
--m [P|M|F|P|U], this argument directly downloads the desired model directory if -m_dir is used users will need to download the model directory themselves <br />
-Other settings are available, see https://github.com/LiLabAtVT/DeepTE <br />
 
 We tested this on the same system used in Step 1 and DeepTE ran in under 12 hours.  <br />
 
@@ -79,11 +83,14 @@ sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up lib
 ### TE Screening with [RepeatMasker](https://www.repeatmasker.org)
 ```
 [pathway to RepeatMasker]RepeatMasker [pathway to the FASTA genome/transcriptome to be screened] -pa 48 -s -a -lib [pathway to the final EDTA/DeepTE FASTA library] -dir .
-```
--pa gives the number of processess to use in parallel <br />
--s [s|q|qq] RepeatMasker is able to operate at different sensitivities/speeds with -q providing a quick, less sensitive screening and -s providing a slow and more sensivite screening <br />
--a is an output option that shows alignments in a .align output file <br />
 
+-pa           Gives the number of processess to use in parallel
+-s [s|q|qq]   RepeatMasker is able to operate at different sensitivities/speeds with -q providing a quick, less sensitive screening and -s providing a slow and more     sensivite screening
+-a            Is an output option that shows alignments in a .align output file
+-lib          Specifies that there is a de novo repeat library you wish to use instead of RepBase
+
+Other settings are available, see https://www.repeatmasker.org
+```
 
 ### RepeatMasker Output Clean-Up
 
