@@ -94,6 +94,13 @@ Other settings are available, see https://www.repeatmasker.org
 
 ### RepeatMasker Output Clean-Up
 
+RepeatMasker uses astrisks in its .out file to label repeats that overlap with one or more other hits that have a higher score. To create a list of distinct repeat hits the following bash command can be used to remove lines with an astrisk in them.  <br />
+```
+bash
+awk '!/\*/' repeatmasker.out > noasterisk_repeatmasker.out
+```
+When using *de novo* libraries RepeatMasker sometimes also adds a superfluous -int notation to the TE name which can interfere with downstream parsing, this can be removed with the following bash command. <br />
+
 ### Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
 ## Citations
