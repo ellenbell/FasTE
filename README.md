@@ -39,14 +39,14 @@ conda activate EDTA
 perl [path to EDTA script]/EDTA.pl --genome [path to fasta file genome assembly] --species others --sensitive 1 --threads 42 
 exit
 ```
- --genome [file] path to genome FASTA file 
- --species [rice|Maize|others] in this instance we were working on a teleost fish species so used "others"
- --sensitive [0|1] Use RepeatModeler to identify remaining TEs (1) or not (0, default), we ran it with RepeatModeler.
- --threads Number of threads to run this script (default 4), we ran it with 42. 
- Other options are available, see https://github.com/oushujun/EDTA
+ --genome [file] path to genome FASTA file <br />
+ --species [rice|Maize|others] in this instance we were working on a teleost fish species so used "others" <br />
+ --sensitive [0|1] Use RepeatModeler to identify remaining TEs (1) or not (0, default), we ran it with RepeatModeler <br />
+ --threads Number of threads to run this script (default 4), we ran it with 42 <br />
+ Other options are available, see https://github.com/oushujun/EDTA <br />
  
-This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). 
-On this system with this genome EDTA ran in c.60 hours. 
+This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
+On this system with this genome EDTA ran in c.60 hours. <br />
  
 
 
