@@ -65,4 +65,17 @@ We tested this on the same system used in Step 1 and DeepTE ran in under 12 hour
 
 ## Step 3: Header Clean-Up
 
+This is just a simple bash script to clean up the library headers <br />
+```
+bash
+sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
+```
+
+## Step 4: TE Screening with [RepeatMasker](https://www.repeatmasker.org)
+
+## Step 5: RepeatMasker Output Clean-Up
+
+## Step 6: Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
+
+
 
