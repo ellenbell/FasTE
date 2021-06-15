@@ -34,9 +34,9 @@ conda install numpy=1.16.0
 ```
 If this installation has been completed the following commands will apply <br />
 
-## Part1: TE Library Generation 
+## Part 1: TE Library Generation 
 
-### Step 1: TE Annotation with EDTA
+### TE Annotation with EDTA
 ```
 conda activate EDTA 
 perl [path to EDTA script]/EDTA.pl --genome [path to fasta file genome assembly] --species others --sensitive 1 --threads 42 
@@ -51,7 +51,7 @@ exit
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
 On this system with this genome EDTA ran in c.60 hours. <br />
  
-### Step 2: TE Classification with DeepTE
+### TE Classification with DeepTE
 ```
 conda activate py36
 python [path to DeepTE]DeepTE.py -d [path to working directory] -o [path to output directory] -i [path to EDTA library FASTA] -sp M -m M
@@ -66,9 +66,9 @@ Other settings are available, see https://github.com/LiLabAtVT/DeepTE <br />
 
 We tested this on the same system used in Step 1 and DeepTE ran in under 12 hours.  <br />
 
-### Step 3: Header Clean-Up
+### Header Clean-Up
 
-This is just a simple bash script to clean up the library headers <br />
+This is just a simple bash command to clean up the library headers <br />
 ```
 bash
 sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
@@ -76,11 +76,11 @@ sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up lib
 
 ## Part 2: Screening for TEs
 
-### Step 1: TE Screening with [RepeatMasker](https://www.repeatmasker.org)
+### TE Screening with [RepeatMasker](https://www.repeatmasker.org)
 
-### Step 2: RepeatMasker Output Clean-Up
+### RepeatMasker Output Clean-Up
 
-### Step 3: Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
+### Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
 
 
