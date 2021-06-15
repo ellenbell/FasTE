@@ -68,7 +68,7 @@ exit
 Other settings are available, see https://github.com/LiLabAtVT/DeepTE
 ```
 
-We tested this on the same system used in Step 1 and DeepTE ran in under 12 hours.  <br />
+We tested this on the same system as that used for EDTA and DeepTE ran in under 12 hours.  <br />
 
 ### Header Clean-Up
 
