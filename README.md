@@ -33,7 +33,7 @@ conda install numpy=1.16.0
 ```
 If this installation has been completed the following commands will apply <br />
 
-## Step 1: TE Annotation with EDTA:
+## Step 1: TE Annotation with EDTA
 ```
 conda activate EDTA 
 perl [path to EDTA script]/EDTA.pl --genome [path to fasta file genome assembly] --species others --sensitive 1 --threads 42 
@@ -48,8 +48,21 @@ exit
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
 On this system with this genome EDTA ran in c.60 hours. <br />
  
+## Step 2: TE Classification with DeepTE
+```
+conda activate py36
+python [path to DeepTE]DeepTE.py -d [path to working directory] -o [path to output directory] -i [path to EDTA library FASTA] -sp M -m M
+exit
+```
+-d pathway to a working directory where intermediate files for each step are stored <br />
+-o pathway to an output directory where output files are stored <br />
+-i Input sequences that are unknown TE or DNA sequences, in this case your EDTA made TE library <br />
+-sp [P|M|F|O], P: Plants, M: Metazoans, F: Fungi and O: Others. This was a teleost fish species so M <br />
+-m [P|M|F|P|U], this argument directly downloads the desired model directory if -m_dir is used users will need to download the model directory themselves <br />
+Other settings are available, see https://github.com/LiLabAtVT/DeepTE <br />
 
+We tested this on the same system used in Step 1 and DeepTE ran in under 12 hours.  <br />
 
-
+## Step 3: Header Clean-Up
 
 
