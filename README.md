@@ -1,4 +1,4 @@
-# Quick_TE
+# FasTE
 This repository is designed to be used as a quick use guide to two packages; the Extensive de novo TE Annotator (EDTA) and DeepTE which may be used in tandem for *de novo* transposable element (TE) library generation. It then provides a walk-through of TE screening with RepeatMasker
 
 <img width="1076" alt="Screenshot 2021-06-15 at 16 56 24" src="https://user-images.githubusercontent.com/46861035/122085468-a7765400-cdfa-11eb-85cb-ae0165dbe3ce.png">
