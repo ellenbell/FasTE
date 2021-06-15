@@ -1,6 +1,7 @@
 # Quick_TE
 This repository is designed to be used as a quick use guide to two packages; the Extensive de novo TE Annotator (EDTA) and DeepTE which may be used in tandem for *de novo* transposable element (TE) library generation. It then provides a walk-through of TE screening with RepeatMasker
 
+<img width="1076" alt="Screenshot 2021-06-15 at 16 56 24" src="https://user-images.githubusercontent.com/46861035/122085468-a7765400-cdfa-11eb-85cb-ae0165dbe3ce.png">
 
 ## Dependencies
 
@@ -9,7 +10,7 @@ This repository is designed to be used as a quick use guide to two packages; the
 [RepeatMasker](https://www.repeatmasker.org) <br />
 [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) <br />
 
-## Recommended installation for [EDTA](https://github.com/oushujun/EDTA) <br />
+### Recommended installation for [EDTA](https://github.com/oushujun/EDTA) <br />
 
 Download the latest EDTA <br />
 ```
@@ -19,7 +20,7 @@ Find the yml file in the folder and run <br />
 ```
 conda env create -f EDTA.yml
 ```
-## Recommended installation for [DeepTE](https://github.com/LiLabAtVT/DeepTE) <br />
+### Recommended installation for [DeepTE](https://github.com/LiLabAtVT/DeepTE) <br />
 
 Download the latest DeepTE scripts <br />
 ```
@@ -33,7 +34,9 @@ conda install numpy=1.16.0
 ```
 If this installation has been completed the following commands will apply <br />
 
-## Step 1: TE Annotation with EDTA
+## Part1: TE Library Generation 
+
+### Step 1: TE Annotation with EDTA
 ```
 conda activate EDTA 
 perl [path to EDTA script]/EDTA.pl --genome [path to fasta file genome assembly] --species others --sensitive 1 --threads 42 
@@ -48,7 +51,7 @@ exit
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
 On this system with this genome EDTA ran in c.60 hours. <br />
  
-## Step 2: TE Classification with DeepTE
+### Step 2: TE Classification with DeepTE
 ```
 conda activate py36
 python [path to DeepTE]DeepTE.py -d [path to working directory] -o [path to output directory] -i [path to EDTA library FASTA] -sp M -m M
@@ -63,7 +66,7 @@ Other settings are available, see https://github.com/LiLabAtVT/DeepTE <br />
 
 We tested this on the same system used in Step 1 and DeepTE ran in under 12 hours.  <br />
 
-## Step 3: Header Clean-Up
+### Step 3: Header Clean-Up
 
 This is just a simple bash script to clean up the library headers <br />
 ```
@@ -71,11 +74,13 @@ bash
 sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
 ```
 
-## Step 4: TE Screening with [RepeatMasker](https://www.repeatmasker.org)
+## Part 2: Screening for TEs
 
-## Step 5: RepeatMasker Output Clean-Up
+### Step 1: TE Screening with [RepeatMasker](https://www.repeatmasker.org)
 
-## Step 6: Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
+### Step 2: RepeatMasker Output Clean-Up
+
+### Step 3: Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
 
 
