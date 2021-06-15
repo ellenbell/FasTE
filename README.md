@@ -14,6 +14,8 @@ This repository is designed to be used as a quick use guide to two packages; the
 Download the latest EDTA <br />
 ```
 git clone https://github.com/oushujun/EDTA.git
-Find the yml file in the folder and run
+```
+Find the yml file in the folder and run <br />
+```
 conda env create -f EDTA.yml
 ```
