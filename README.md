@@ -84,8 +84,8 @@ sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up lib
 ```
 [pathway to RepeatMasker]RepeatMasker [pathway to the FASTA genome/transcriptome to be screened] -pa 48 -s -a -lib [pathway to the final EDTA/DeepTE FASTA library] -dir .
 
--pa           Gives the number of processess to use in parallel
--s [s|q|qq]   RepeatMasker is able to operate at different sensitivities/speeds with -q providing a quick, less sensitive screening and -s providing a slow and more     sensivite screening
+-pa           Gives the number of processess to use in parallel, in this case 48
+-s [s|q|qq]   RepeatMasker is able to operate at different sensitivities/speeds with -q providing a quick, less sensitive screening and -s providing a slow and more sensivite screening, we used this more sensitive screening option
 -a            Is an output option that shows alignments in a .align output file
 -lib          Specifies that there is a de novo repeat library you wish to use instead of RepBase
 
