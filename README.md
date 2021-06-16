@@ -1,7 +1,9 @@
 # FasTE
-FasTE is designed to be used as a quick user guide for *de novo* transposable element (TE) library generation and subsequent TE screening. Part 1: TE library generation, utilises the packages; Extensive *de novo* TE Annotator (EDTA) and DeepTE which may be used in tandem for *de novo* TE annotation and classification. Part 2: TE screening, demonstrates how newly made libraries can be used in conjunction with RepeaMasker for repeat detection and outputs parsed with RM_TRIPS prior to downstream analysis. 
+FasTE is designed to be used as a quick guide for *de novo* transposable element (TE) library generation and subsequent TE screening. <br />
+**Part 1: TE library generation**, utilises the packages; Extensive *de novo* TE Annotator (EDTA, Ou et al., 2019) and DeepTE (Yan et al., 2020) which may be used in tandem for *de novo* TE annotation and classification. <br />
+**Part 2: TE screening**, demonstrates how newly made libraries can be used in conjunction with RepeatMasker for repeat detection and outputs parsed with RM_TRIPS prior to downstream analysis. <br />
 
-<img width="1073" alt="Screenshot 2021-06-16 at 10 31 21" src="https://user-images.githubusercontent.com/46861035/122195221-118c0900-ce8e-11eb-8427-6b1c5e4a4fd6.png">
+<img width="1085" alt="Screenshot 2021-06-16 at 11 29 14" src="https://user-images.githubusercontent.com/46861035/122203682-31bfc600-ce96-11eb-9452-07e41ed50f3c.png">
 
 
 
@@ -53,7 +55,7 @@ Other settings are available, see https://github.com/oushujun/EDTA
  ```
 
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
-On this system with this genome EDTA ran in c.60 hours. <br />
+On this system with this genome, EDTA ran in c.60 hours. <br />
  
 ### TE Classification with DeepTE
 ```
@@ -70,26 +72,53 @@ exit
 Other settings are available, see https://github.com/LiLabAtVT/DeepTE
 ```
 
-We tested this on the same system as that used for EDTA and DeepTE ran in under 12 hours.  <br />
+This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on an EDTA made library (size 8.6MB).
+On this system with this EDTA library, DeepTE ran in under 12 hours.  <br />
 
 ### Header Clean-Up
 
-The headers in the output from DeepTE contain some information that is now surplus to requirement. This can be removed by running the following bash command to clean up the library headers. <br />
+The headers in the output from DeepTE contain some attempted classifications from EDTA that are now surplus to requirement. <br />
+For example:
+```
+Example headers from the raw EDTA library output:
+>TE_00000000#Unknown
+>TE_00000001#Unknown
+>TE_00000002#Unknown
+>TE_00000003#Unknown
+>TE_00000004#Unknown
+
+Example headers from the EDTA/DeepTE library output:
+>TE_00000000#Unknown__ClassI_LTR_Gypsy
+>TE_00000001#Unknown__ClassI_LTR_Copia
+>TE_00000002#Unknown__ClassI_LTR_Gypsy
+>TE_00000003#Unknown__ClassI_LTR_Gypsy
+>TE_00000004#Unknown__ClassI_LTR_Gypsy
+```
+Headers can be simplified by running the following bash command to clean up the library headers. This makes downstream screening and analysis easier. <br />
 ```
 bash
 sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
+
+Example headers in cleaned library
+>TE_00000000#__ClassI_LTR_Gypsy
+>TE_00000001#__ClassI_LTR_Copia
+>TE_00000002#__ClassI_LTR_Gypsy
+>TE_00000003#__ClassI_LTR_Gypsy
+>TE_00000004#__ClassI_LTR_Gypsy
 ```
 
 ## Part 2: Screening for TEs
 
 ### TE Screening with [RepeatMasker](https://www.repeatmasker.org)
+Now that a *de novo* TE library has been produced it can be used in conjunction with RepeatMasker to screen for TEs. 
+
 ```
 [pathway to RepeatMasker]RepeatMasker [pathway to the FASTA genome/transcriptome to be screened] -pa 48 -s -a -lib [pathway to the final EDTA/DeepTE FASTA library] -dir .
 
 -pa           Gives the number of processess to use in parallel, in this case 48
 -s [s|q|qq]   RepeatMasker is able to operate at different sensitivities/speeds with -q providing a quick, less sensitive screening and -s providing a slow and more sensivite screening, we used this more sensitive screening option
 -a            Is an output option that shows alignments in a .align output file
--lib          Specifies that there is a de novo repeat library you wish to use instead of RepBase
+-lib          Specifies that there is a de novo repeat library you wish to use 
 
 Other settings are available, see https://www.repeatmasker.org
 ```
@@ -108,7 +137,7 @@ sed 's/-int//' [noasterisk_repeatmasker.out] > [tidy_noasterisk_repeatmasker.out
 ```
 ### Parsing RepeatMasker Output with [RM_TRIPS](https://github.com/clbutler/RM_TRIPS)
 
-Cleaned RepeatMasker output files will need to be further parsed prior to any downstream analysis of TE content. We recommend the use of [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) which is an R based parse script that will; (i) remove repetetive elements not classed as TEs, (ii) merge closely positioned TE fragments of matching identity, (iii) remove duplicated isoforms (from transcriptomic data) and, (iv) remove fragments less then 80 base pairs long. It then outputs a .csv file which can be input for downstream applications. <br />
+Cleaned RepeatMasker output files will need to be further parsed prior to any downstream analysis of TE content. We recommend the use of [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) which is an R based parse script that will; (i) remove repetitive elements not classed as TEs, (ii) merge closely positioned TE fragments of matching identity, (iii) remove duplicated isoforms (from transcriptomic data) and, (iv) remove fragments less then 80 base pairs long. It then outputs a .csv file which can be input for downstream applications. <br />
 
 To run RM_TRIPS first download and open the RM_TRIPS scripts (ideally in R studio). <br />
 
