@@ -16,7 +16,7 @@ Download the latest EDTA <br />
 ```
 git clone https://github.com/oushujun/EDTA.git
 ```
-Find the yml file in the folder and run <br />
+Find the .yml file in the folder and run <br />
 ```
 conda env create -f EDTA.yml
 ```
@@ -94,7 +94,7 @@ Other settings are available, see https://www.repeatmasker.org
 
 ### RepeatMasker Output Clean-Up
 
-RepeatMasker uses astrisks in its .out file to label repeats that overlap with one or more other hits that have a higher score. To create a list of distinct repeat hits the following bash command can be used to remove lines with an astrisk in them.  <br />
+RepeatMasker uses asterisks in its .out file to label repeats that overlap with one or more other hits that have a higher score. To create a list of distinct repeat hits the following bash command can be used to remove lines with an asterisk in them.  <br />
 ```
 bash
 awk '!/\*/' [repeatmasker.out] > [noasterisk_repeatmasker.out]
