@@ -99,7 +99,7 @@ Headers can be simplified by running the following bash command to clean up the 
 bash
 sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
 
-Example headers in cleaned library
+Example headers in cleaned library:
 >TE_00000000#__ClassI_LTR_Gypsy
 >TE_00000001#__ClassI_LTR_Copia
 >TE_00000002#__ClassI_LTR_Gypsy
