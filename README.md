@@ -14,17 +14,17 @@ FasTE is designed to be used as a quick user guide for *de novo* transposable el
 
 ### Recommended installation for [EDTA](https://github.com/oushujun/EDTA) <br />
 
-Download the latest EDTA <br />
+Download the latest EDTA. <br />
 ```
 git clone https://github.com/oushujun/EDTA.git
 ```
-Find the .yml file in the folder and run <br />
+Find the .yml file in the folder and run. <br />
 ```
 conda env create -f EDTA.yml
 ```
 ### Recommended installation for [DeepTE](https://github.com/LiLabAtVT/DeepTE) <br />
 
-Download the latest DeepTE scripts <br />
+Download the latest DeepTE scripts. <br />
 ```
 Install conda: https://www.anaconda.com/products/individual
 conda create -n py36 python=3.6
@@ -34,7 +34,7 @@ conda install biopython
 conda install keras=2.2.4
 conda install numpy=1.16.0
 ```
-If this installation has been completed the following commands will apply <br />
+If this installation has been completed the following commands will apply. <br />
 
 ## Part 1: TE Library Generation 
 
@@ -74,7 +74,7 @@ We tested this on the same system as that used for EDTA and DeepTE ran in under 
 
 ### Header Clean-Up
 
-The headers in the output from DeepTE contain some information that is now surplus to requirement. This can be removed by running the following bash command to clean up the library headers <br />
+The headers in the output from DeepTE contain some information that is now surplus to requirement. This can be removed by running the following bash command to clean up the library headers. <br />
 ```
 bash
 sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
@@ -121,7 +121,7 @@ k <- '[Directory of the final cleaned TE library]' #directory where the repeatma
 l <- '[cleaned_denovo_TE_lib.fasta]'  #set name of .lib file
 
 ```
-The RM_TRIPS script may now be run through sequentially and a .csv file of parsed RepeatMasker outputs will be produced in the specified output directory <br />
+The RM_TRIPS script may now be run through sequentially and a .csv file of parsed RepeatMasker outputs will be produced in the specified output directory. <br />
 
 For a more detailed description of RM_TRIPS output go to... 
 
