@@ -152,7 +152,28 @@ l <- '[cleaned_denovo_TE_lib.fasta]'  #set name of .lib file
 ```
 The RM_TRIPS script may now be run through sequentially and a .csv file of parsed RepeatMasker outputs will be produced in the specified output directory. <br />
 
-For a more detailed description of RM_TRIPS output go to... 
+### Parsed [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) Output 
+
+The .csv file produced by RM_TRIPS has 13 column headers with the following descriptors. <br/>
+
+This output is now ready for use in downstream TE analysis! <br/>
+
+| Column Header  | Description |
+| ------------- | ------------- |
+| repeat_id  | Name of TE with the significant hit  |
+| try_id  | Name of scaffold or transcript with a TE hit  |
+| matching_repeat | Is match complement (C) of the TE sequence? |
+| matching_class | The transposon class to which the TE belongs |
+| reference_length | Sequence length of the TE as found in the reference library |
+| merged_qrystart | Start of TE hit found on the transcript |
+| merged_qryend | End of TE hit found on the transcript |
+| mergedfraglength | Sequence length of TE hit (bp) |
+| perc_div | % of substitutions in matching region compared to the consensus |
+| perc_del | % of bases opposite a gap in the query sequence |
+| perc_insert | % of bases opposite a gap in the repeat sequence |
+| Gene | Gene name |
+| Isoform | Isoform number |
+
 
 ### Contact
 
