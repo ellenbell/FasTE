@@ -40,7 +40,7 @@ If this installation has been completed the following commands will apply. <br /
 
 ## Part 1: TE Library Generation 
 
-### TE Annotation with EDTA
+### TE Annotation with [EDTA](https://github.com/oushujun/EDTA)
 ```
 conda activate EDTA 
 perl [path to EDTA script]/EDTA.pl --genome [path to fasta file genome assembly] --species others --sensitive 1 --threads 42 
@@ -57,7 +57,7 @@ Other settings are available, see https://github.com/oushujun/EDTA
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
 On this system with this genome, EDTA ran in c.60 hours. <br />
  
-### TE Classification with DeepTE
+### TE Classification with [DeepTE](https://github.com/LiLabAtVT/DeepTE)
 ```
 conda activate py36
 python [path to DeepTE]DeepTE.py -d [path to working directory] -o [path to output directory] -i [path to EDTA library FASTA] -sp M -m M
