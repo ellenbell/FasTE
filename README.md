@@ -175,7 +175,7 @@ This output is now ready for use in downstream TE analysis! <br/>
 | Isoform | Isoform number |
 
 
-### Contact
+## Contact
 
 For questions or queries please contact:
 
