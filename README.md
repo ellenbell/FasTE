@@ -72,7 +72,7 @@ We tested this on the same system as that used for EDTA and DeepTE ran in under 
 
 ### Header Clean-Up
 
-This is just a simple bash command to clean up the library headers <br />
+The headers in the output from DeepTE contain some information that is now surplus to requirement. This can be removed by running the following bash command to clean up the library headers <br />
 ```
 bash
 sed -e 's/\(#\).*\(__\)/\1\2/'  [path to DeepTE.fasta] > [path to cleaned up library]
