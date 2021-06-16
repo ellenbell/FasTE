@@ -1,7 +1,8 @@
 # FasTE
 FasTE is designed to be used as a quick user guide for *de novo* transposable element (TE) library generation and subsequent TE screening. Part 1: TE library generation, utilises the packages; Extensive *de novo* TE Annotator (EDTA) and DeepTE which may be used in tandem for *de novo* TE annotation and classification. Part 2: TE screening, demonstrates how newly made libraries can be used in conjunction with RepeaMasker for repeat detection and outputs parsed with RM_TRIPS prior to downstream analysis. 
 
-<img width="1076" alt="Screenshot 2021-06-16 at 10 08 26" src="https://user-images.githubusercontent.com/46861035/122191676-da682880-ce8a-11eb-9b0a-bd105fcbe9ba.png">
+<img width="1073" alt="Screenshot 2021-06-16 at 10 31 21" src="https://user-images.githubusercontent.com/46861035/122195221-118c0900-ce8e-11eb-8427-6b1c5e4a4fd6.png">
+
 
 
 ## Dependencies
