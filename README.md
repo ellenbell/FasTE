@@ -1,7 +1,7 @@
 # FasTE
 FasTE is designed to be used as a quick guide for *de novo* transposable element (TE) library generation and subsequent TE screening. <br />
 **Part 1: TE library generation**, utilises the packages; Extensive *de novo* TE Annotator (EDTA, Ou et al., 2019) and DeepTE (Yan et al., 2020) which may be used in tandem for *de novo* TE annotation and classification. <br />
-**Part 2: TE screening**, demonstrates how newly made libraries can be used in conjunction with RepeatMasker for repeat detection and outputs parsed with RM_TRIPS prior to downstream analysis. <br />
+**Part 2: TE screening**, demonstrates how newly made libraries can be used in conjunction with RepeatMasker (Smit et al., 2013-2015) for repeat detection and outputs parsed with RM_TRIPS prior to downstream analysis. <br />
 
 <img width="1085" alt="Screenshot 2021-06-16 at 11 29 14" src="https://user-images.githubusercontent.com/46861035/122203682-31bfc600-ce96-11eb-9452-07e41ed50f3c.png">
 
@@ -164,6 +164,8 @@ Martin I Taylor - martin.taylor@uea.ac.uk <br />
 
 ## Citations
 Ou, S., Su, W., Liao, Y., Chougule, K., Agda, J. R.A., Hellinga, A. J., …Hufford, M. B. (2019). Benchmarking transposable element annotation methods for creation of a streamlined, comprehensive pipeline. Genome Biology, 20(1), 1–18. doi: 10.1186/s13059-019-1905-y. <br />
+
+Smit, AFA, Hubley, R & Green, P. RepeatMasker Open-4.0. 2013-2015 <http://www.repeatmasker.org>. <br />
 
 Smit, A. F. & Hubley, R. RepeatModeler Open-1.0. Available from: http://www.repeatmasker.org. <br />
 
