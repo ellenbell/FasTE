@@ -99,7 +99,7 @@ RepeatMasker uses astrisks in its .out file to label repeats that overlap with o
 bash
 awk '!/\*/' [repeatmasker.out] > [noasterisk_repeatmasker.out]
 ```
-When using *de novo* libraries RepeatMasker sometimes also adds a superfluous -int notation to the TE name which can interfere with downstream parsing, this can be removed with the following bash command. <br />
+When using *de novo* libraries RepeatMasker sometimes also adds a superfluous -int notation to the TE name which can interfere with downstream parsing, these can be removed with the following bash command. <br />
 ```
 bash
 sed 's/-int//' [noasterisk_repeatmasker.out] > [tidy_noasterisk_repeatmasker.out]
