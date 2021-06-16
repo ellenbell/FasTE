@@ -62,7 +62,7 @@ exit
 -d               Pathway to a working directory where intermediate files for each step are stored
 -o               Pathway to an output directory where output files are stored
 -i               Input sequences that are unknown TE or DNA sequences, in this case your EDTA made TE library
--sp [P|M|F|O]    P: Plants, M: Metazoans, F: Fungi and O: Others. This was a teleost fish species so M
+-sp [P|M|F|O]    P: Plants, M: Metazoans, F: Fungi and O: Others. This was a teleost fish species so M was used
 -m [P|M|F|P|U]   This argument directly downloads the desired model directory if -m_dir is used users will need to download the model directory themselves
 
 Other settings are available, see https://github.com/LiLabAtVT/DeepTE
