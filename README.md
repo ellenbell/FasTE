@@ -139,6 +139,8 @@ sed 's/-int//' [noasterisk_repeatmasker.out] > [tidy_noasterisk_repeatmasker.out
 
 Cleaned RepeatMasker output files will need to be further parsed prior to any downstream analysis of TE content. We recommend the use of [RM_TRIPS](https://github.com/clbutler/RM_TRIPS) which is an R based parse script that will; (i) remove repetitive elements not classed as TEs, (ii) merge closely positioned TE fragments of matching identity, (iii) remove duplicated isoforms (from transcriptomic data) and, (iv) remove fragments less then 80 base pairs long. It then outputs a .csv file which can be input for downstream applications. <br />
 
+<img width="366" alt="Screenshot 2021-06-23 at 16 21 35" src="https://user-images.githubusercontent.com/46861035/123124102-4aece780-d43f-11eb-9e32-82db58255c9b.png">
+
 To run RM_TRIPS first download and open the RM_TRIPS scripts (ideally in R studio). <br />
 
 Lines 10 to 13 of the R script should then be modified, as shown: <br />
