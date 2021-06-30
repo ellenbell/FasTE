@@ -52,6 +52,7 @@ exit
  --threads                        Number of threads to run this script (default 4), we ran it with 42 
 
 Other settings are available, see https://github.com/oushujun/EDTA 
+Also note that EDTA doesn't like headers with more then 15 characters, so some header editing may be required
  ```
 
 This was tested with Linux Ubuntu (v18.04.5), 32 cores, 64 threads, 128GB RAM on a genome (size c.700MB). <br />
